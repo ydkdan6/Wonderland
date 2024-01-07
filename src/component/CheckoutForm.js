@@ -54,7 +54,7 @@ const CheckoutForm = () => {
         title: item.title,
         price: item.price,
         quantity: item.quantity,
-        image: item.image,  //
+        image: item.image,
       })),
     };
     
