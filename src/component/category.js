@@ -1,14 +1,11 @@
 import React, {useState} from "react";
-import { useHistory } from "react-router-dom";
-import image1 from '../Human-wig/stockimg1.jpg';
 import Categories from './categories';
-import StarRating from "./starRating";
+import ItemCard from "./itemCard";
 
 const Category = () => {
 
-  const history = useHistory();
-
     const [data, setData] = useState(Categories);
+
     const filterResult = (cartItem) => {
       const result = Categories.filter((curData)=> {
         return curData.category === cartItem
@@ -16,11 +13,7 @@ const Category = () => {
 
       setData(result);
     }
-    const handleBuyNow = (product) => {
-      // Redirect to the add-to-cart page with product details
-      history.push(`/add-to-cart/${encodeURIComponent(product.title)}/${product.price}/${product.rating}`);
-    };
-
+    
   return (
     <div>
       <h1 className="text-center text-info">Our Collections</h1>
@@ -41,33 +34,24 @@ const Category = () => {
           </div>
           <div className="col-md-9">
             <div className="row">
-              {data.map((values)=> {
-               const {id,title,price,rating,image} = values;
+              {data.map((item, index)=> {
                 return (
-                  <>
-              <div className="col-md-4 mb-4" key={id}>
-                <div class="card">
-                  <img src={image1} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">{title}</h5>
-                    <p>Price: #{price}</p>
-                    <p className="card-text"> <StarRating totalStars={5} rating={rating}/>
-                    </p>
-                    <button
-  href="#"
-  className="btn btn-dark"
-    onClick={() => handleBuyNow({ id, title, price, rating })}>
-  Buy Now
-</button>
-
-                  </div>
-                </div>
-              </div>
-                  </>
+                  <ItemCard 
+                  id={item.id} 
+                  title={item.title} 
+                  price={item.price} 
+                  rating={item.rating}  
+                  category={item.category}
+                  image={item.image}
+                  item={item}
+                  key={index}
+                  />
                 );
               })}
             </div>
           </div>
+          <div>
+    </div>
         </div>
       </div>
     </div>

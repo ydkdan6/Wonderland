@@ -1,5 +1,6 @@
 // Navbar.jsx
 import React from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css'; // You can create a CSS file for styling
@@ -14,7 +15,7 @@ function Navbar() {
 
     <div className="links">
     <ul>
-        <li> Home</li>
+        <li> <Link to='/'>Home</Link></li>
         <li> Shop</li>
         <li>About</li>
         <li>Contact</li>

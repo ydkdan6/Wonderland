@@ -1,21 +1,29 @@
 import React from "react";
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home/Home';
 import Navbar from './Navbars/Navbar';
 import Advert from './Advert/Advert';
-import AddToCart from "./component/addToCart";
-import Category from "./component/category";
+import CheckoutForm from "./component/CheckoutForm";
+import AddToCart from "./component/Addtocart";
+import { CartProvider } from "react-use-cart";
 
-
-const App = () => {
+function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Advert />
-        <Home />
-        <Category />
+      <Router>
+        <CartProvider>
+          <Navbar />
+          <Advert />
+          <Switch>
+            <Route path='/addtocart' component={AddToCart} />
+            <Route path="/checkout" component={CheckoutForm} />
+            <Route path='/' component={Home} />
+          </Switch>
+        </CartProvider>
+      </Router>
     </div>
   );
-};
+}
 
 export default App;

@@ -1,6 +1,7 @@
 // Home.jsx
 import React from 'react';
 import './Home.css'; 
+import Category from '../component/category';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import humanwig3 from '../Human-wig/stockimg3.jpg';
 
@@ -35,6 +36,7 @@ function Home() {
           </div>
         </section>
       </div>
+      <Category />
     </div>
   );
 }
