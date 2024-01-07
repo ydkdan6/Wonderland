@@ -25,8 +25,7 @@ const AddToCart = () => {
 
   useEffect(() => {
     // Logic to run after the initial render
-    // For example, you can perform state-related updates here
-  }, [items, cartTotal]); // Add other dependencies as needed
+  }, [items, cartTotal]);
 
   if (isEmpty) return <h1 className="text-center">Your Cart is Empty!</h1>;
 

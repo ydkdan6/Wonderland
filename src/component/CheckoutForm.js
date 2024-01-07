@@ -54,7 +54,7 @@ const CheckoutForm = () => {
         title: item.title,
         price: item.price,
         quantity: item.quantity,
-        image: item.image,  // Replace 'image' with the actual key in your item object
+        image: item.image,  //
       })),
     };
     

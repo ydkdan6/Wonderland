@@ -8,7 +8,7 @@ const ItemCard = (props) => {
 
     const handleAddToCart = () => {
         console.log(props)
-        addItem(props); // Pass the entire props object to addItem
+        addItem(props); // Passing the entire object to the addItem method
     };
 
     return (
